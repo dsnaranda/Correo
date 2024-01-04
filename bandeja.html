@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bandeja.css">
+    <title>Bandeja de Entrada</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Barra lateral con botones -->
+        <div class="sidebar">
+            <label id="usuarioLabel">Usuario: </label>
+            <button onclick="logout()">Cerrar Sesión</button>
+            <button onclick="mostrarBandeja()">Bandeja de Entrada</button>
+            <button onclick="mostrarFormulario()">Enviar Mensaje</button>
+        </div>
+
+        <!-- Contenido principal de la bandeja de entrada -->
+        <div class="main-content">
+            <div id="bandejaEntrada" style="display:none;">
+                <!-- Aquí se mostrarán los mensajes recibidos -->
+            </div>
+
+            <div id="formulario" style="display:none;">
+                <form onsubmit="enviarMensaje()">
+                    <label for="destinatario">Para:</label>
+                    <input type="text" id="destinatario" required>
+
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" required>
+
+                    <label for="contenido">Contenido:</label>
+                    <textarea id="contenido" required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
